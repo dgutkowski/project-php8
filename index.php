@@ -1,5 +1,7 @@
 <?php
 require_once("maincore.php");
 
-$core->redirect("rules.php");
+// Przekierowanie wedlug ustawien
+
+$core->redirect();
 ?>
