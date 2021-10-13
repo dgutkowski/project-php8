@@ -8,8 +8,10 @@
 	<meta name="keywords" content="<?php echo $core->getSet("keys"); ?>">
 	<meta name="description" content="<?php echo $core->getSet("desc"); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="js/check.js"></script>
+	<!--<script type="text/javascript" src="js/slider.js"></script>-->
 </head>
-<body>
+<body onload="changeImg()">
 	<div class='container'>
 		<div class='row pt-2 pb-1'>
 			<header class='col-12 bg-pr text-dark text-center'>
