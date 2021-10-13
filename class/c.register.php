@@ -69,6 +69,7 @@ class Register
 			$this->msg[] = "Dane zostały wprowadzone poprawnie.";
 			return true;
 		}
+		else return false;
 	}
 	
 	public function newUserAdd($dbConnection = null, $timeZone = null)
@@ -129,12 +130,12 @@ class Register
 				echo "</div>\n";
 			}
 		}
-		
+		echo "	<div id=\"js-msg\"></div>\n";
 		echo "	<form class=\"row g-3\"action=\"\" method=\"post\">\n";
-		echo "		<div class=\"col-md-12\"><label class=\"form-label\" for=\"login\">Login</label><input class=\"form-control\" name=\"login\" type=\"text\" value=\"".@$_POST['login']."\" placeholder=\"login\"></div>\n";
-		echo "		<div class=\"col-md-12\"><label class=\"form-label\" for=\"email\">Adres e-mail</label><input class=\"form-control\" name=\"email\" type=\"text\" value=\"".@$_POST['email']."\" placeholder=\"user@domain\"></div>\n";
-		echo "		<div class=\"col-md-6\"><label class=\"form-label\" for=\"pass1\">Hasło</label><input class=\"form-control\" name=\"pass1\" type=\"password\" value=\"\" placeholder=\"\"></div>\n";
-		echo "		<div class=\"col-md-6\"><label class=\"form-label\" for=\"pass2\">Powtórz hasło</label><input class=\"form-control\" name=\"pass2\" type='password' value='' placeholder=\"\"></div>\n";
+		echo "		<div class=\"col-md-12\"><label class=\"form-label\" for=\"login\">Login</label><input id=\"login\" onfocusout=\"check_login()\" class=\"form-control\" name=\"login\" type=\"text\" value=\"".@$_POST['login']."\" placeholder=\"login\" aria-required=\"true\"></div>\n";
+		echo "		<div class=\"col-md-12\"><label class=\"form-label\" for=\"email\">Adres e-mail</label><input id=\"email\" onfocusout=\"check_mail()\" class=\"form-control\" name=\"email\" type=\"text\" value=\"".@$_POST['email']."\" placeholder=\"user@domain\" aria-required=\"true\"></div>\n";
+		echo "		<div class=\"col-md-6\"><label class=\"form-label\" for=\"pass1\">Hasło</label><input id=\"pass1\" onfocusout=\"check_pass_len()\" class=\"form-control\" name=\"pass1\" type=\"password\" value=\"\" placeholder=\"\" aria-required=\"true\"></div>\n";
+		echo "		<div class=\"col-md-6\"><label class=\"form-label\" for=\"pass2\">Powtórz hasło</label><input id=\"pass2\" onfocusout=\"check_pass()\" class=\"form-control\" name=\"pass2\" type='password' value='' placeholder=\"\" aria-required=\"true\"></div>\n";
 		echo "		<div class=\"col-md-12\"><div class=\"form-check\"><input class=\"form-check-input\" type=\"checkbox\" name=\"rules\" value=\"1\"><label class=\"form-check-label\">Akceptuję <a class=\"text-muted\" href=\"rules.php\">regulamin serwisu</a> oraz <a class=\"text-muted\" href=\"policy.php\">politykę prywatności</a></label></div></div>\n";
 		echo "		<div class=\"col-md-12\"><center><input class=\"btn btn-sm btn-light btn-outline-primary w-25 mt-2\" type=\"submit\" value=\"Wyślij\"></center></div>\n";
 		echo "	</form>\n";
