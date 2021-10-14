@@ -28,6 +28,7 @@ function check_login()
 function check_pass()
 {
 	// return true jesli weryfikacja ciagu jest poprawna
+	// obecnie sprawdza tylko liczbe znakow w zmiennej
 	
 	var pass1 = document.getElementById("pass1").value;
 	var pass2 = document.getElementById("pass2").value;
