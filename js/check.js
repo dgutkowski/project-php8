@@ -1,4 +1,6 @@
 /*
+// posklejane do jednej funkcji
+
 function check_pass_len()
 {
 	var len = document.getElementById("pass1").value.length;
